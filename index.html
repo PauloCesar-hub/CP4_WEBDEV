@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CP1 - CRUD | Cards estilo FIFA</title>
+  <link rel="stylesheet" href="src/css/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>Jogadoras • Cards estilo FIFA</h1>
+  </header>
+
+  <main class="container">
+    <section id="form-section" class="panel">
+      <h2 id="form-title">Adicionar Jogadora</h2>
+      <form id="jogadora-form" autocomplete="off">
+        <input type="hidden" id="edit-index" />
+
+        <div class="grid">
+          <label class="field">
+            <span>Nome</span>
+            <input type="text" id="nome" placeholder="Nome da jogadora" required />
+          </label>
+
+          <label class="field">
+            <span>Posição</span>
+            <input type="text" id="posicao" placeholder="Ex: ST, MC, ZAG" required />
+          </label>
+
+          <label class="field">
+            <span>Clube</span>
+            <input type="text" id="clube" placeholder="Ex: Corinthians" required />
+          </label>
+
+          <label class="field full">
+            <span>Foto (URL)</span>
+            <input type="url" id="foto" placeholder="https://imagem-da-jogadora.jpg" required />
+          </label>
+        </div>
+
+        <div class="actions">
+          <button type="submit" id="submit-btn">Adicionar</button>
+          <button type="reset" id="reset-btn" class="ghost">Limpar</button>
+        </div>
+
+        <p class="note">Obs.: Os atributos (PAC, SHO, PAS, DRI, DEF, PHY) são fixos e não são editáveis.</p>
+      </form>
+    </section>
+
+     <button id="resetar">🔄 Resetar Jogadoras</button> 
+
+    <section id="filtros" class="panel">
+      <input type="text" id="busca" placeholder="Buscar por nome ou posição..." />
+      <select id="filtro-time">
+        <option value="">Todos os clubes</option>
+      </select>
+      <button id="ordenar-nome">Ordenar por Nome</button>
+      <button id="ordenar-posicao">Ordenar por Posição</button>
+    </section>
+
+    <section id="cards-container" class="cards-grid"></section>
+  </main>
+
+  <footer class="foot">
+    <p>WebDev • CRUD com LocalStorage • Cards estilo FIFA</p>
+  </footer>
+
+  <script src="src/js/script.js"></script>
+</body>
+</html>
